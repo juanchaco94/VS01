@@ -9,12 +9,12 @@ using System.Web.Mvc;
 using VS01.Models;
 
 namespace VS01.Controllers
+        // GET: people
 {
     public class peopleController : Controller
     {
         private VS01Context db = new VS01Context();
 
-        // GET: people
         public ActionResult Index()
         {
             var people = db.people.Include(p => p.genders).Include(p => p.rol);
@@ -41,6 +41,7 @@ namespace VS01.Controllers
         {
             ViewBag.IdGender = new SelectList(db.genders, "IdGender", "description");
             ViewBag.IdRol = new SelectList(db.rols, "IdRol", "description");
+            ViewBag.IdDocumentType = new SelectList(db.documentTypes, "IdDocumentType", "description");
             return View();
         }
 

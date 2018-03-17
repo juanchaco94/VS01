@@ -15,7 +15,7 @@ namespace VS01.Models
 
         public string lastName { get; set; }
 
-        public int IdDocumetType { get; set; }
+        public int IdDocumentType { get; set; }
 
         public string identityNumber { get; set; }
 
